@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+</HEAD>
+ 
+<BODY>
+
+    <label>Ingrese numero <input type="text" id="Name" name="Name" /></label>
+    <p id="p1"></p>
+
+    <script>
+        var face0=new Image()
+        face0.src="numero1.png"
+        var face1=new Image()
+        face1.src="numero2.png"
+        var face2=new Image()
+        face2.src="numero3.png"
+        var face3=new Image()
+        face3.src="numero4.png"
+        var face4=new Image()
+        face4.src="numero5.png"
+        var face5=new Image()
+        face5.src="numero6.png"
+        var face6=new Image()
+        face6.src="numero7.png"
+        var face7=new Image()
+        face7.src="numero8.png"
+        var face8=new Image()
+        face8.src="numero9.png"
+        var face9=new Image()
+        face9.src="numero10.png"
+    </script>
+ 
+ 
+    <img src="" name="mydice">
+ 
+    <form>
+    <input type="button" value="Lanza dado" onClick="lanzar()" name="numeroIngresado" id="numeroIngresado">
+    </form>
+ 
+    <script>
+    function lanzar()
+    {
+        var randomdice=Math.round(Math.random()*9);
+        var valor = document.getElementById("Name").value;
+
+        document.images["mydice"].src=eval("face"+randomdice+".src");
+        let p = document.getElementsByTagName('p')[0];
+
+        if(valor == (randomdice+1)){
+            //alert("Es igual");
+            
+            p.innerHTML = "Es igual";
+
+        } else {
+            //alert("No es igual")
+            p.innerHTML = "No es igual";
+
+        }
+
+    }
+    </script>
+ 
+</BODY>
+</HTML>
